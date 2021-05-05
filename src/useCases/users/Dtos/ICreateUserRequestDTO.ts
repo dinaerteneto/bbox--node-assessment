@@ -1,4 +1,4 @@
-import { UserRole, UserEvent } from '../../entity/User';
+import { UserRole, UserEvent } from '../../../entity/User';
 
 export interface ICreateUserRequestDTO {
   firstName: string,
