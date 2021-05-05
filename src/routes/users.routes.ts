@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { createUserController } from '../useCases/CreateUser'
-import { deleteUserController } from '../useCases/DeleteUser'
-import { getUsersController } from '../useCases/GetUsers'
-import { getUserController } from '../useCases/GetUser'
+import { createUserController } from '../useCases/users/CreateUser'
+import { deleteUserController } from '../useCases/users/DeleteUser'
+import { getUsersController } from '../useCases/users/GetUsers'
+import { getUserController } from '../useCases/users/GetUser'
 
 const usersRouter = Router()
 
