@@ -1,4 +1,4 @@
-import { UserRole, UserEvent } from "../../entity/User";
+import { UserRole, UserEvent } from "../../../entity/User";
 import { Request, Response } from "express";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 

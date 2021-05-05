@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ICreateUserRequestDTO } from '../Dtos/ICreateUserRequestDTO';
-import User from '../../entity/User';
-import { UserRepository } from '../../repositories/UsersRepository';
+import User from '../../../entity/User';
+import { UserRepository } from '../../../repositories/UsersRepository';
 import { getCustomRepository } from 'typeorm';
-import { AppError } from '../../errors/AppError';
+import { AppError } from '../../../errors/AppError';
 
 
 export class CreateUserUseCase {
