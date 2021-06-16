@@ -11,7 +11,7 @@ export class CreateProjectTable1619453804962 implements MigrationInterface {
       new Table({
         name: "projects",
         columns: [
-          { name: "uuid", type: "varchar", isPrimary: true },
+          { name: "id", type: "varchar", isPrimary: true },
           { name: "description", type: "varchar" },
           { name: "owner", type: "varchar" },
           { name: "created_at", type: "timestamp" },
@@ -23,7 +23,7 @@ export class CreateProjectTable1619453804962 implements MigrationInterface {
       "projects",
       new TableForeignKey({
         columnNames: ["owner"],
-        referencedColumnNames: ["uuid"],
+        referencedColumnNames: ["id"],
         referencedTableName: "users",
         onDelete: "CASCADE",
       })

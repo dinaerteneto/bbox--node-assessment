@@ -1,8 +1,5 @@
 import { Router } from 'express'
-import { createUserController } from '../useCases/users/CreateUser'
-import { deleteUserController } from '../useCases/users/DeleteUser'
-import { getUsersController } from '../useCases/users/GetUsers'
-import { getUserController } from '../useCases/users/GetUser'
+import { makeCreateUserController } from '../main/factories/user/user-controller-factory';
 
 import { yup, validate } from './validator';
 
@@ -21,9 +18,9 @@ usersRouter.post('/', async (request, response) => {
         return response.json(errors)
     }    
 
-    return createUserController.handle(request, response)
+    return makeCreateUserController(request, response)
 })
-
+/*
 usersRouter.delete('/:id', async (request, response) => {
     return deleteUserController.handle(request, response)
 })
@@ -35,5 +32,6 @@ usersRouter.get('/', async (request, response) => {
 usersRouter.get('/:id', async (request, response) => {
     return getUserController.handle(request, response)
 })
+*/
 
 export { usersRouter }
