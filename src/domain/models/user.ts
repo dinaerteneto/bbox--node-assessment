@@ -1,13 +1,12 @@
-export interface UserModel {
-    id?: string,
+export type UserModel = {
+    id: string,
     firstName: string,
     lastName: string,
     email: string,
     phoneNumber: string,
     password: string,
     role: UserRole,
-    creationDate: Date,
-    currentEvent: UserEvent,
+    currentEvent: UserEvent        
 }
 
 export enum UserRole {
@@ -20,4 +19,3 @@ export enum UserEvent {
     ACCEPTANCE = 'ACCEPTANCE',
     REFUSAL = 'REFUSAL'
 }
-  

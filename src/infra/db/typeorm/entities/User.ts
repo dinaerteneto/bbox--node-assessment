@@ -1,5 +1,5 @@
+import { UserRole, UserEvent } from '../../../../domain/models'
 import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
-import { UserEvent, UserRole } from "../../../../domain/models/User";
 
 @Entity("users")
 export default class User extends BaseEntity {

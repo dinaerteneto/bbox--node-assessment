@@ -7,13 +7,13 @@
   "database": "bbox",
   "synchronize": false,
   "logging": false,
-  "entities": ["src/infra/db/typeorm/entities/**/*.ts"],
-  "migrations": ["src/database/migration/**/*.ts"],
-  "subscribers": ["src/subscriber/**/*.ts"],
+  "entities": ["build/infra/db/typeorm/entities/**/*.{js,ts}"],
+  "migrations": ["build/infra/db/typeorm/migration/**/*.{js,ts}"],
+  "subscribers": ["build/subscriber/**/*.{js,ts}"],
   "migrationsTableName": "migrations_tbl",
   "cli": {
-    "entitiesDir": "src/entity",
-    "migrationsDir": "src/database/migration",
+    "entitiesDir": "src/infra/db/typeorm/entities",
+    "migrationsDir": "src/infra/db/typeorm/migration",
     "subscribersDir": "src/subscriber"
   }
 }

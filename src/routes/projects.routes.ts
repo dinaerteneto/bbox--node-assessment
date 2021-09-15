@@ -1,3 +1,4 @@
+/*
 import { Router } from 'express'
 import { createProjectController } from '../useCases/projects/CreateProject'
 import { deleteProjectController } from '../useCases/projects/DeleteProject'
@@ -32,3 +33,4 @@ projectsRouter.get('/', async (request, response) => {
 })
 
 export { projectsRouter }
+*/

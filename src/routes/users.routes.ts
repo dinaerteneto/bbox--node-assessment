@@ -1,5 +1,11 @@
 import { Router } from 'express'
-import { makeCreateUserController } from '../main/factories/user/user-controller-factory';
+import {
+    makeAddUserController,
+    makeReadUserController,
+    makeReadUsersController,
+    makeDeleteUserController,
+    makeUpdateUserController
+} from '@/main/factories/controllers';
 
 import { yup, validate } from './validator';
 
@@ -18,20 +24,23 @@ usersRouter.post('/', async (request, response) => {
         return response.json(errors)
     }    
 
-    return makeCreateUserController(request, response)
+    return makeAddUserController(request, response)
 })
-/*
+
 usersRouter.delete('/:id', async (request, response) => {
-    return deleteUserController.handle(request, response)
+    return makeDeleteUserController(request, response)
 })
 
 usersRouter.get('/', async (request, response) => {
-    return getUsersController.handle(request, response)
+    return makeReadUsersController(request, response)
 })
 
 usersRouter.get('/:id', async (request, response) => {
-    return getUserController.handle(request, response)
+    return makeReadUserController(request, response)
 })
-*/
+
+usersRouter.put('/id:', async (request, response) => {
+    return makeUpdateUserController(request, response)
+})
 
 export { usersRouter }

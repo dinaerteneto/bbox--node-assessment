@@ -1,3 +1,4 @@
+/*
 import express, { Request, Response } from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
@@ -120,3 +121,4 @@ createConnection()
   .catch((error) =>
     console.error(`⚠ [database]: Couldn't connect to the database: ${error}`)
   );
+*/
