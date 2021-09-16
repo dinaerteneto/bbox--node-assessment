@@ -1,4 +1,4 @@
-import { DbLoadUsers } from "@/data/usecases/user/db-load-users";
+import { DbLoadUsers } from "@/data/usecases";
 import { UserTypeOrmRepository } from "@/infra/db/typeorm/repositories";
 import { ReadUsersController } from "@/presentation/controllers";
 import { Request, Response } from "express";

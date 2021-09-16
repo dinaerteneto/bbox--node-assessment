@@ -2,7 +2,8 @@ import {
     AddProjectRepository,
     DelProjectRepository,
     LoadProjectByIdRepository,
-    LoadProjectsRepository
+    LoadProjectsRepository,
+    UpdateProjectRepository
 } from "@/data/protocols";
 import { EntityRepository, EntityManager } from "typeorm";
 import Project from "../entities/Project";
@@ -13,7 +14,8 @@ import { v4 as uuidv4 } from 'uuid';
 export class ProjectTypeOrmRepository implements AddProjectRepository,
     DelProjectRepository,
     LoadProjectByIdRepository,
-    LoadProjectsRepository {
+    LoadProjectsRepository,
+    UpdateProjectRepository {
 
     constructor(private manager: EntityManager) {}
 
@@ -41,6 +43,12 @@ export class ProjectTypeOrmRepository implements AddProjectRepository,
     async loadAll(): Promise<LoadProjectsRepository.Result | []> {
         const projects = await this.manager.find(Project)
         return projects || []
+    }
+
+    async update(id: string, data: UpdateProjectRepository.Params): Promise<UpdateProjectRepository.Result> {
+        await this.manager.save(Project, { ...data, id })
+        const project = await this.manager.findOne(Project, { where: { id } })
+        return project || null
     }
 
 }

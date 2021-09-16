@@ -2,7 +2,8 @@ import {
     makeAddProjectController,
     makeDeleteProjectController,
     makeReadProjectController,
-    makeReadProjectsController
+    makeReadProjectsController,
+    makeUpdateProjectController
 } from '@/main/factories';
 import { Router } from 'express'
 import { yup, validate } from './validator';
@@ -31,6 +32,10 @@ projectsRouter.get('/:id', async (request, response) => {
 
 projectsRouter.get('/', async (request, response) => {
     return makeReadProjectsController(request, response)
+})
+
+projectsRouter.put('/:id', async (request, response) => {
+    return makeUpdateProjectController(request, response)
 })
 
 export { projectsRouter }
