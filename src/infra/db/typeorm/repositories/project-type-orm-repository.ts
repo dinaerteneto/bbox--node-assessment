@@ -1,4 +1,4 @@
-import { AddProjectRepository, DelProjectRepository } from "@/data/protocols";
+import { AddProjectRepository, DelProjectRepository, LoadProjectByIdRepository, LoadUserByIdRepository } from "@/data/protocols";
 import { EntityRepository, EntityManager } from "typeorm";
 import Project from "../entities/Project";
 import User from "../entities/User";
@@ -6,7 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 @EntityRepository(Project)
 export class ProjectTypeOrmRepository implements AddProjectRepository,
-    DelProjectRepository {
+    DelProjectRepository,
+    LoadProjectByIdRepository {
 
     constructor(private manager: EntityManager) {}
 
@@ -18,13 +19,17 @@ export class ProjectTypeOrmRepository implements AddProjectRepository,
             owner: user,
             creationDate: new Date(),
         }
-        await this.manager.save(Project, data)
-        return projectData
+        return this.manager.save(Project, data)
     }
 
     async remove(id: string): Promise<DelProjectRepository.Result> {
         const isDelete = await this.manager.delete(Project, id)
         return !!isDelete
+    }
+
+    async load(id: string): Promise<LoadProjectByIdRepository.Result | null> {
+        const project = await this.manager.findOne(Project, { where: { id } })
+        return project || null
     }
 
 }

@@ -19,3 +19,15 @@ export enum UserEvent {
     ACCEPTANCE = 'ACCEPTANCE',
     REFUSAL = 'REFUSAL'
 }
+
+export namespace UserModel {
+    export type Result = {
+        id: string,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phoneNumber: string,
+        role: UserRole,
+        creationDate: Date
+    }
+}

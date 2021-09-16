@@ -1,4 +1,4 @@
-import { makeAddProjectController, makeDeleteProjectController } from '@/main/factories';
+import { makeAddProjectController, makeDeleteProjectController, makeLoadProjectController } from '@/main/factories';
 import { Router } from 'express'
 import { yup, validate } from './validator';
 
@@ -20,11 +20,11 @@ projectsRouter.delete('/:id', async (request, response) => {
     return makeDeleteProjectController(request, response)
 })
 
-/*
 projectsRouter.get('/:id', async (request, response) => {
-    return getProjectController.handle(request, response)
+    return makeLoadProjectController(request, response)
 })
 
+/*
 projectsRouter.get('/', async (request, response) => {
     return getProjectsController.handle(request, response)
 })
