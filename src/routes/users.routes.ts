@@ -39,7 +39,7 @@ usersRouter.get('/:id', async (request, response) => {
     return makeReadUserController(request, response)
 })
 
-usersRouter.put('/id:', async (request, response) => {
+usersRouter.put('/:id', async (request, response) => {
     return makeUpdateUserController(request, response)
 })
 

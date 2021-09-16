@@ -10,7 +10,7 @@ export class DeleteUserController implements Controller {
         try {
             const { id } = request.params
             const isRemove = await this.delUser.remove(id)
-            return response.status(201).json(isRemove);
+            return response.status(200).json(isRemove);
         } catch (err) {
             return response.status(400).json({
                 message: err.message || 'Unexpected error.'
