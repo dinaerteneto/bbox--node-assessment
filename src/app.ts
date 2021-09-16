@@ -1,7 +1,8 @@
+import 'module-alias/register'
 import express, { Request, Response, NextFunction } from 'express';
-import { AppError } from './errors/AppError';
-import { router } from './routes'
-import './database';
+import { AppError } from '@/errors/AppError';
+import { router } from '@/routes'
+import '@/infra/db/typeorm';
 
 const app = express()
 

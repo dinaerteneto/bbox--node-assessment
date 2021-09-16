@@ -6,6 +6,6 @@ import { projectsRouter } from './projects.routes'
 const router = Router()
 
 router.use('/users', usersRouter);
-// router.use('/projects', projectsRouter);
+router.use('/projects', projectsRouter);
 
 export { router }

@@ -11,7 +11,7 @@ import User from "./User";
 @Entity("projects")
 export default class Project extends BaseEntity {
   @PrimaryColumn()
-  uuid: string;
+  id: string;
 
   @Column({ name: "description" })
   description: string;

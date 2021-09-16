@@ -1,8 +1,11 @@
+import {
+    makeAddProjectController,
+    makeDeleteProjectController,
+    makeReadProjectController,
+    makeReadProjectsController,
+    makeUpdateProjectController
+} from '@/main/factories';
 import { Router } from 'express'
-import { createProjectController } from '../useCases/projects/CreateProject'
-import { deleteProjectController } from '../useCases/projects/DeleteProject'
-import { getProjectController } from '../useCases/projects/GetProject'
-import { getProjectsController } from '../useCases/projects/GetProjects'
 import { yup, validate } from './validator';
 
 const projectsRouter = Router()
@@ -16,19 +19,23 @@ projectsRouter.post('/', async (request, response) => {
     if (errors) {
         return response.json(errors)
     }        
-    return createProjectController.handle(request, response)
+    return makeAddProjectController(request, response)
 })
 
 projectsRouter.delete('/:id', async (request, response) => {
-    return deleteProjectController.handle(request, response)
+    return makeDeleteProjectController(request, response)
 })
 
 projectsRouter.get('/:id', async (request, response) => {
-    return getProjectController.handle(request, response)
+    return makeReadProjectController(request, response)
 })
 
 projectsRouter.get('/', async (request, response) => {
-    return getProjectsController.handle(request, response)
+    return makeReadProjectsController(request, response)
+})
+
+projectsRouter.put('/:id', async (request, response) => {
+    return makeUpdateProjectController(request, response)
 })
 
 export { projectsRouter }
