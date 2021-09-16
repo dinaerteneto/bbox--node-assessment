@@ -6,7 +6,7 @@ import {
     RemoveUserRepository,
     UpdateUserRepository
 } from '@/data/protocols'
-import { UserRole, UserEvent, UserModel } from '@/domain/models';
+import { UserRole, UserEvent } from '@/domain/models';
 import { EntityManager, EntityRepository } from 'typeorm'
 
 import User from '../entities/User'
