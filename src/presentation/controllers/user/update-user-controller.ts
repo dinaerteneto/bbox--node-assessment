@@ -1,4 +1,4 @@
-import { UpdateUser } from "@/domain/usecases/users/update-user";
+import { UpdateUser } from "@/domain/usecases";
 import { Controller } from "@/presentation/protocols";
 import { Request, Response } from "express";
 
