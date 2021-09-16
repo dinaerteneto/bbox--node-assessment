@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 import { DbLoadProjectById } from "@/data/usecases";
 import { Controller } from "@/presentation/protocols";
 
-export class LoadProjectController implements Controller {
+export class ReadProjectController implements Controller {
 
     constructor(private loadProjectById: DbLoadProjectById) {}
 
