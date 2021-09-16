@@ -6,7 +6,8 @@ export type UserModel = {
     phoneNumber: string,
     password: string,
     role: UserRole,
-    currentEvent: UserEvent        
+    currentEvent: UserEvent,
+    creationDate: Date
 }
 
 export enum UserRole {
@@ -18,16 +19,4 @@ export enum UserEvent {
     CREATION = 'CREATION',
     ACCEPTANCE = 'ACCEPTANCE',
     REFUSAL = 'REFUSAL'
-}
-
-export namespace UserModel {
-    export type Result = {
-        id: string,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phoneNumber: string,
-        role: UserRole,
-        creationDate: Date
-    }
 }

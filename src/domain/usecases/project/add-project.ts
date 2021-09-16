@@ -5,5 +5,5 @@ export interface AddProject {
 
 export namespace AddProject {
     export type Params = {userId: string, description: string}
-    export type Result = ProjectModel.Result
+    export type Result = ProjectModel
 }

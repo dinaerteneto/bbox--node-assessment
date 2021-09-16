@@ -5,6 +5,6 @@ export interface AddUser {
 }
 
 export namespace AddUser {
-    export type Params = Omit<UserModel, 'id'>
-    export type Result = UserModel
+    export type Params = UserModel
+    export type Result = Omit<UserModel, 'password'>
 }

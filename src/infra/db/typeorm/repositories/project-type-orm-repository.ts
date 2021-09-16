@@ -1,10 +1,11 @@
 import {
     AddProjectRepository,
-    DelProjectRepository,
+    RemoveProjectRepository,
     LoadProjectByIdRepository,
     LoadProjectsRepository,
     UpdateProjectRepository
-} from "@/data/protocols";
+} from "@/data/protocols/db";
+
 import { EntityRepository, EntityManager } from "typeorm";
 import Project from "../entities/Project";
 import User from "../entities/User";
@@ -12,7 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 @EntityRepository(Project)
 export class ProjectTypeOrmRepository implements AddProjectRepository,
-    DelProjectRepository,
+    RemoveProjectRepository,
     LoadProjectByIdRepository,
     LoadProjectsRepository,
     UpdateProjectRepository {
@@ -30,7 +31,7 @@ export class ProjectTypeOrmRepository implements AddProjectRepository,
         return this.manager.save(Project, data)
     }
 
-    async remove(id: string): Promise<DelProjectRepository.Result> {
+    async remove(id: string): Promise<RemoveProjectRepository.Result> {
         const isDelete = await this.manager.delete(Project, id)
         return !!isDelete
     }

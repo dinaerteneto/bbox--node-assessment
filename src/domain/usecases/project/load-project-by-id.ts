@@ -5,5 +5,5 @@ export interface LoadProjectById {
 }
 
 export namespace LoadProjectById {
-    export type Result = ProjectModel.Result
+    export type Result = ProjectModel
 }

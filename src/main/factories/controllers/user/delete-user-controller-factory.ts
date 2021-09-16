@@ -1,4 +1,4 @@
-import { DbRemoveUser } from '@/data/usecases/user/db-remove-user'
+import { DbRemoveUser } from '@/data/usecases'
 import { UserTypeOrmRepository } from '@/infra/db/typeorm/repositories'
 import { DeleteUserController } from '@/presentation/controllers'
 import {Request, Response} from 'express'

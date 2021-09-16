@@ -5,7 +5,7 @@ import {
     LoadUsersRepository,
     RemoveUserRepository,
     UpdateUserRepository
-} from '@/data/protocols'
+} from '@/data/protocols/db'
 import { UserRole, UserEvent } from '@/domain/models';
 import { EntityManager, EntityRepository } from 'typeorm'
 

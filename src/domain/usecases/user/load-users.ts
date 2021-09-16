@@ -1,9 +1,9 @@
 import { UserModel } from "@/domain/models";
 
 export interface LoadUsers {
-    loadAll() : Promise<LoadUsers.Result>
+    loadAll(): Promise<LoadUsers.Results>
 }
 
 export namespace LoadUsers {
-    export type Result = UserModel[]
+    export type Results = UserModel[]
 }

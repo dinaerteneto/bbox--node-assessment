@@ -5,6 +5,6 @@ export interface UpdateProject {
 }
 
 export namespace UpdateProject {
-    export type Result = ProjectModel.Result
-    export type Params = Omit<ProjectModel.Params, 'userId'>
+    export type Result = ProjectModel
+    export type Params = Omit<ProjectModel, 'userId'>
 }

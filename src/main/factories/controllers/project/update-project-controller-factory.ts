@@ -1,4 +1,4 @@
-import { DbUpdateProject } from "@/data/usecases/project/db-update-project";
+import { DbUpdateProject } from "@/data/usecases";
 import { ProjectTypeOrmRepository } from "@/infra/db/typeorm/repositories";
 import { UpdateProjectController } from "@/presentation/controllers";
 import { Request, Response } from "express";
